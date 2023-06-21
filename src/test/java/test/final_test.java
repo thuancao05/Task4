@@ -1,10 +1,14 @@
 package test;
 
+import core.Log;
+import core.TestListener;
 import core.baseTest;
 import function.*;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+@Listeners(TestListener.class)
 public class final_test extends baseTest  {
     public common_function commonFunction;
     public login_function loginFunction;
@@ -200,7 +204,9 @@ public class final_test extends baseTest  {
 //        commonFunction.sleep(10000) ;                    // time to select customer and product
 //        addSaletFunction.clicksubmitButton();
         commonFunction.sleep(3000);
-        addSaletFunction.clickCustomer();
+        addSaletFunction.inputCustomerAndProduct();
+        addSaletFunction.clicksubmitButton();
+        addSaletFunction.verifyAddSuccess();
     }
 
     //Verify Purchases List
@@ -251,7 +257,8 @@ public class final_test extends baseTest  {
         commonFunction.sleep(2000);
         //navigate to add purchases page
         addPurchasesFunction = new addPurchases_function(driver);
-        commonFunction.sleep(10000);                             //time to select Supplier and product
+        addPurchasesFunction.inputSupplierAndProduct();
+        commonFunction.sleep(2000);
         addPurchasesFunction.clickSubmitButton();                       //click submit button
 
     }

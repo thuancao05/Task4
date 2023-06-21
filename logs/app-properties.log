@@ -1,0 +1,12 @@
+[INFO ] 22-06-2023 00:04:25 [main] Log - Start auto test
+[INFO ] 22-06-2023 00:04:56 [main] Log - This test case succeed: TC_01
+[INFO ] 22-06-2023 00:05:33 [main] Log - This test case succeed: TC_02
+[INFO ] 22-06-2023 00:06:11 [main] Log - This test case succeed: TC_03
+[ERROR] 22-06-2023 00:06:54 [main] Log - This test case failed: TC_04
+[ERROR] 22-06-2023 00:07:48 [main] Log - This test case failed: TC_05
+[INFO ] 22-06-2023 00:08:24 [main] Log - This test case succeed: TC_06
+[ERROR] 22-06-2023 00:09:05 [main] Log - This test case failed: TC_07
+[INFO ] 22-06-2023 00:09:58 [main] Log - This test case succeed: TC_08
+[INFO ] 22-06-2023 00:10:43 [main] Log - This test case succeed: TC_09
+[INFO ] 22-06-2023 00:11:28 [main] Log - This test case succeed: TC_10
+[INFO ] 22-06-2023 00:11:32 [main] Log - End auto test

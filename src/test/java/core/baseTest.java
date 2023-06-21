@@ -31,7 +31,7 @@ public class baseTest {
     @AfterMethod
     public void tearDown() throws InterruptedException {
         Thread.sleep(3000);
-        //driver.quit();
+        driver.quit();
     }
     @AfterMethod
     public void takeScreenshot(ITestResult result) {
@@ -55,4 +55,17 @@ public class baseTest {
             }
         }
     }
+//    @AfterMethod
+//    public void checkAfterMethod(ITestResult result) {
+//        //Bắt trạng thái hoặc tên Test case sau khi chạy xong để xử lý gì đó
+//        if (ITestResult.FAILURE == result.getStatus()) {
+//            System.out.println(result.getName() + " failed");
+//        }
+//        else if(ITestResult.SUCCESS == result.getStatus()){
+//            System.out.println(result.getName() + " passed");
+//        }
+//        else{
+//            System.out.println(result.getName() + " skipped");
+//        }
+//    }
 }

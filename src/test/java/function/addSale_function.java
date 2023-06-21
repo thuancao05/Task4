@@ -14,9 +14,14 @@ public class addSale_function extends basePage {
     }
 
 
-    public void clickCustomer(){
+    public void inputCustomerAndProduct(){
         WebElement element = getDriver().findElement(addSalePage.seCus);
         element.click();
+        commonFunction.sendKeys(addSalePage.txtCustomser, "1");
+        commonFunction.sleep(1000);
+        commonFunction.press(Keys.ENTER);
+        commonFunction.sendKeys(addSalePage.txtProduct, "kiwi");
+        commonFunction.sleep(1000);
     }
 
 
@@ -43,5 +48,8 @@ public class addSale_function extends basePage {
     //ham click submit
     public void clicksubmitButton(){
         commonFunction.clicks(addSalePage.btnSubmit);
+    }
+    public void verifyAddSuccess(){
+        commonFunction.isDisplayed(addSalePage.lblAlertSuccess);
     }
 }
