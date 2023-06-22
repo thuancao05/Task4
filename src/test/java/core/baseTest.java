@@ -1,11 +1,15 @@
 package core;
 
+import driver.DriverFactory;
+import driver.DriverManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import keywords.WebUI;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.io.FileHandler;
+import org.openqa.selenium.support.ThreadGuard;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -19,19 +23,15 @@ public class baseTest {
     public WebDriver driver;
     @BeforeMethod
     public void setUp() {
-        driver = new ChromeDriver();
-        WebDriverManager.chromedriver().setup();
-        driver.manage().window().maximize();
-//        driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
-//        driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-        driver.navigate().to("https://sma.tecdiary.net/admin");
+        ThreadGuard.protect(new DriverFactory().createDriver());
+        WebUI.openURL("https://sma.tecdiary.net/admin/login");
 
     }
 
     @AfterMethod
     public void tearDown() throws InterruptedException {
         Thread.sleep(3000);
-        driver.quit();
+        DriverManager.quit();
     }
     @AfterMethod
     public void takeScreenshot(ITestResult result) {
